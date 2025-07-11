@@ -410,6 +410,103 @@
             font-size: 1.3rem;
         }
         
+        /* Team Members Styles */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15);
+        }
+        
+        .team-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            overflow: hidden;
+            border: 3px solid var(--border);
+            position: relative;
+        }
+        
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-photo::before {
+            content: 'picture.png';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 500;
+            text-align: center;
+            z-index: 1;
+        }
+        
+        .team-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .team-role {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .team-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .team-link:hover {
+            color: var(--accent);
+        }
+        
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -669,7 +766,7 @@
                 padding: 2rem 1.5rem;
             }
             
-            .services-grid, .project-grid {
+            .services-grid, .project-grid, .team-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -691,6 +788,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-toggle">
@@ -831,7 +929,9 @@
             <div class="project-grid">
                 <div class="project-card animate-on-scroll">
                     <div class="project-img">
-                        <i class="fas fa-lungs fa-4x"></i>
+                        <div style="text-align: center;">
+                            <h4 style="color: white; font-weight: 600; font-size: 1.5rem;">Lung Cancer Analytics</h4>
+                        </div>
                         <div class="project-links">
                             <a href="https://mohamedsillahkanu.github.io/Lung-Cancer-Analysis-Dashboard/" class="project-link-btn">
                                 <i class="fas fa-eye"></i> View Project
@@ -846,7 +946,9 @@
 
                 <div class="project-card animate-on-scroll">
                     <div class="project-img">
-                        <i class="fas fa-user-md fa-4x"></i>
+                        <div style="text-align: center;">
+                            <h4 style="color: white; font-weight: 600; font-size: 1.5rem;">Colon Cancer Research</h4>
+                        </div>
                         <div class="project-links">
                             <a href="https://mohamedsillahkanu.github.io/Colon-Cancer-Dashboard-Analysis/" class="project-link-btn">
                                 <i class="fas fa-eye"></i> View Project
@@ -861,7 +963,9 @@
 
                 <div class="project-card animate-on-scroll">
                     <div class="project-img">
-                        <i class="fas fa-heart fa-4x"></i>
+                        <div style="text-align: center;">
+                            <h4 style="color: white; font-weight: 600; font-size: 1.5rem;">Hypertension Monitor</h4>
+                        </div>
                         <div class="project-links">
                             <a href="https://mohamedsillahkanu.github.io/Hypertension-Dashboard/" class="project-link-btn">
                                 <i class="fas fa-eye"></i> View Project
@@ -876,7 +980,9 @@
 
                 <div class="project-card animate-on-scroll">
                     <div class="project-img">
-                        <i class="fas fa-heartbeat fa-4x"></i>
+                        <div style="text-align: center;">
+                            <h4 style="color: white; font-weight: 600; font-size: 1.5rem;">Heart Disease Prediction</h4>
+                        </div>
                         <div class="project-links">
                             <a href="https://mohamedsillahkanu.github.io/Heart-Disease/" class="project-link-btn">
                                 <i class="fas fa-eye"></i> View Project
@@ -891,7 +997,9 @@
 
                 <div class="project-card animate-on-scroll">
                     <div class="project-img">
-                        <i class="fas fa-syringe fa-4x"></i>
+                        <div style="text-align: center;">
+                            <h4 style="color: white; font-weight: 600; font-size: 1.5rem;">Diabetes Analytics</h4>
+                        </div>
                         <div class="project-links">
                             <a href="https://mohamedsillahkanu.github.io/Diabetes-dashboard/" class="project-link-btn">
                                 <i class="fas fa-eye"></i> View Project
@@ -906,7 +1014,9 @@
 
                 <div class="project-card animate-on-scroll">
                     <div class="project-img">
-                        <i class="fas fa-microscope fa-4x"></i>
+                        <div style="text-align: center;">
+                            <h4 style="color: white; font-weight: 600; font-size: 1.5rem;">Medical AI Classification</h4>
+                        </div>
                         <div class="project-links">
                             <a href="https://mohamedsillahkanu.github.io/colon-cancer/" class="project-link-btn">
                                 <i class="fas fa-eye"></i> View Project
@@ -917,6 +1027,98 @@
                         <h3>Medical Image Classification</h3>
                         <p>Deep learning CNN model for automated medical image analysis and classification with high accuracy diagnostic capabilities.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="animate-on-scroll">
+            <div class="section-title-container">
+                <div class="section-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2>Our Team</h2>
+            </div>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; text-align: center; color: var(--text-light);">
+                Meet the experts behind our innovative data science solutions
+            </p>
+            
+            <div class="team-grid">
+                <div class="team-card animate-on-scroll">
+                    <div class="team-photo">
+                    </div>
+                    <h3>Dr. Mohamed Sillah Kanu</h3>
+                    <div class="team-role">Lead Data Scientist & Founder</div>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">
+                        Expert in machine learning and predictive analytics with focus on healthcare applications.
+                    </p>
+                    <a href="https://www.linkedin.com/in/mohamed-sillah-kanu" class="team-link">
+                        <i class="fab fa-linkedin"></i> View Profile
+                    </a>
+                </div>
+
+                <div class="team-card animate-on-scroll">
+                    <div class="team-photo">
+                    </div>
+                    <h3>Sarah Johnson</h3>
+                    <div class="team-role">Senior Statistician</div>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">
+                        Specialized in biostatistics and epidemiological modeling for public health research.
+                    </p>
+                    <a href="#" class="team-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </div>
+
+                <div class="team-card animate-on-scroll">
+                    <div class="team-photo">
+                    </div>
+                    <h3>James Kamara</h3>
+                    <div class="team-role">Business Intelligence Analyst</div>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">
+                        Expert in data visualization and dashboard development for business insights.
+                    </p>
+                    <a href="#" class="team-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </div>
+
+                <div class="team-card animate-on-scroll">
+                    <div class="team-photo">
+                    </div>
+                    <h3>Fatima Bangura</h3>
+                    <div class="team-role">Data Engineer</div>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">
+                        Specialist in data infrastructure and machine learning pipeline development.
+                    </p>
+                    <a href="#" class="team-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </div>
+
+                <div class="team-card animate-on-scroll">
+                    <div class="team-photo">
+                    </div>
+                    <h3>Abdul Sesay</h3>
+                    <div class="team-role">Research Analyst</div>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">
+                        Focus on healthcare analytics and clinical research methodology.
+                    </p>
+                    <a href="#" class="team-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </div>
+
+                <div class="team-card animate-on-scroll">
+                    <div class="team-photo">
+                    </div>
+                    <h3>Aminata Turay</h3>
+                    <div class="team-role">Project Manager</div>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">
+                        Ensures timely delivery and quality assurance of all data science projects.
+                    </p>
+                    <a href="#" class="team-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
                 </div>
             </div>
         </section>
